@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A sample CPaaS platform landing page for testing.">
+<title>CloudConnect — CPaaS Demo</title>
+<style>
+:root{--navy:#101b35;--blue:#5267f5;--cyan:#39c6d8;--ink:#18233c;--muted:#65718a;--bg:#f6f8fc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:white}
+header{height:76px;display:flex;align-items:center;justify-content:space-between;max-width:1160px;padding:0 24px;margin:auto}
+.logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;letter-spacing:-.5px}.mark{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-weight:900}
+nav{display:flex;gap:28px}nav a{color:#56627a;text-decoration:none;font-size:14px;font-weight:600}nav a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:10px;padding:13px 19px;background:var(--blue);color:white;text-decoration:none;font-weight:700;cursor:pointer;box-shadow:0 8px 20px #5267f52b}.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{background:radial-gradient(ellipse at 80% 20%,#334b8b 0,transparent 38%),linear-gradient(120deg,#101b35,#17284b);color:white;padding:88px 24px 92px;overflow:hidden}
+.hero-inner{max-width:1160px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;border:1px solid #ffffff38;border-radius:99px;padding:7px 12px;color:#a9eaf0;font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+h1{font-size:clamp(40px,5vw,61px);line-height:1.07;letter-spacing:-2.4px;margin:22px 0 18px}.hero p{color:#c2cce0;font-size:17px;line-height:1.7;max-width:550px}.hero-actions{display:flex;gap:13px;align-items:center;margin-top:28px}.btn.secondary{background:#ffffff15;border:1px solid #ffffff4a;box-shadow:none}
+.trust{font-size:12px;color:#9baac6;margin-top:25px}
+.dashboard{background:#fff;color:var(--ink);padding:22px;border-radius:18px;box-shadow:0 30px 80px #0005;transform:rotate(1deg)}
+.dash-top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #edf0f6;padding-bottom:15px;font-size:13px;font-weight:800}.live{color:#159c75;font-size:11px}.live:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:#22c58b;margin-right:7px}
+.metric-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:17px 0}.metric{background:#f5f7fc;padding:16px;border-radius:12px}.metric small{color:var(--muted)}.metric strong{display:block;font-size:25px;margin-top:7px}.chart{height:112px;background:linear-gradient(180deg,#e8ebff,#fff);border-radius:12px;position:relative;overflow:hidden}.chart svg{width:100%;height:100%}
+.section{max-width:1160px;margin:auto;padding:78px 24px}.section-head{text-align:center;max-width:650px;margin:0 auto 38px}.section-head h2{font-size:34px;letter-spacing:-1px;margin:0 0 12px}.section-head p{color:var(--muted);line-height:1.7;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid #e9edf5;border-radius:16px;padding:25px;background:white}.ico{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;background:#eef0ff;color:var(--blue);font-size:21px}.card h3{margin:18px 0 8px}.card p{color:var(--muted);line-height:1.65;font-size:14px;margin:0}
+.demo{background:var(--bg)}.demo-wrap{max-width:900px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}.demo h2{font-size:34px;letter-spacing:-1px}.demo p{color:var(--muted);line-height:1.7}.form{background:white;padding:25px;border:1px solid #e9edf5;border-radius:16px;box-shadow:0 12px 35px #19294a0a}.form label{display:block;font-size:13px;font-weight:700;margin:13px 0 7px}.form input,.form select,.form textarea{width:100%;padding:12px;border:1px solid #dfe4ee;border-radius:9px;font:inherit;outline:none}.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--blue)}.form button{width:100%;margin-top:17px}.notice{font-size:12px;color:var(--muted);margin-top:10px}
+footer{background:#101b35;color:#aeb9cf;padding:30px 24px}.foot{max-width:1160px;margin:auto;display:flex;justify-content:space-between;gap:20px;font-size:13px}.foot strong{color:white}
+@media(max-width:760px){nav{display:none}.hero{padding:65px 22px}.hero-inner,.demo-wrap{grid-template-columns:1fr}.dashboard{transform:none}.cards{grid-template-columns:1fr}.section{padding:58px 22px}.hero-actions{flex-wrap:wrap}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="mark">C</span> CloudConnect</div>
+  <nav><a href="#platform">Platform</a><a href="#solutions">Solutions</a><a href="#demo">Contact</a></nav>
+  <a class="btn" href="#demo">Get a demo</a>
+</header>
+<main>
+<section class="hero">
+ <div class="hero-inner">
+  <div>
+   <span class="eyebrow">Communication APIs, simplified</span>
+   <h1>One platform.<br>Every conversation.</h1>
+   <p>Build seamless customer experiences with messaging, voice, video and verification APIs — all from one powerful communications platform.</p>
+   <div class="hero-actions"><a class="btn" href="#demo">Explore the platform</a><a class="btn secondary" href="#platform">See capabilities</a></div>
+   <div class="trust">A sample CPaaS website for development and DNS testing</div>
+  </div>
+  <div class="dashboard">
+   <div class="dash-top"><span>Communications overview</span><span class="live">SYSTEM LIVE</span></div>
+   <div class="metric-grid">
+    <div class="metric"><small>Messages delivered</small><strong>98.7%</strong></div>
+    <div class="metric"><small>API response time</small><strong>124ms</strong></div>
+    <div class="metric"><small>Active channels</small><strong>04</strong></div>
+    <div class="metric"><small>Monthly requests</small><strong>2.4M</strong></div>
+   </div>
+   <div class="chart"><svg viewBox="0 0 500 120" preserveAspectRatio="none"><path d="M0 92 C45 82 50 100 95 70 S160 84 200 48 S265 76 310 42 S380 54 420 22 S470 34 500 10" fill="none" stroke="#5267f5" stroke-width="4" stroke-linecap="round"/><path d="M0 92 C45 82 50 100 95 70 S160 84 200 48 S265 76 310 42 S380 54 420 22 S470 34 500 10 L500 120 L0 120Z" fill="#5267f5" opacity=".10"/></svg></div>
+  </div>
+ </div>
+</section>
+<section class="section" id="platform">
+ <div class="section-head"><h2>Everything you need to connect</h2><p>Integrate communication into your applications with developer-friendly APIs and reliable infrastructure.</p></div>
+ <div class="cards" id="solutions">
+  <article class="card"><div class="ico">✉</div><h3>Messaging API</h3><p>Send notifications, alerts and two-way messages across popular messaging channels.</p></article>
+  <article class="card"><div class="ico">☎</div><h3>Voice API</h3><p>Power programmable voice calls, call routing and intelligent customer support workflows.</p></article>
+  <article class="card"><div class="ico">▣</div><h3>Video API</h3><p>Add real-time video experiences to your web and mobile applications.</p></article>
+  <article class="card"><div class="ico">✓</div><h3>Verify API</h3><p>Protect user accounts with one-time passwords and multi-factor verification.</p></article>
+  <article class="card"><div class="ico">⌘</div><h3>Developer tools</h3><p>Explore clear API references, sample requests and easy-to-use integration tools.</p></article>
+  <article class="card"><div class="ico">◈</div><h3>Analytics</h3><p>Monitor delivery, performance and usage from a single simple dashboard.</p></article>
+ </div>
+</section>
+<section class="demo" id="demo">
+ <div class="section demo-wrap">
+  <div><span class="eyebrow" style="background:#eef0ff;color:#5267f5;border-color:#dfe2ff">Let's connect</span><h2>See what better communication can do.</h2><p>Leave a demo request and our team will get back to you. This form is for front-end testing only; it does not send or store your information.</p></div>
+  <form class="form" id="demoForm">
+   <label for="name">Full name</label><input id="name" name="name" placeholder="Your name" required>
+   <label for="email">Work email</label><input id="email" name="email" type="email" placeholder="you@company.com" required>
+   <label for="interest">I'm interested in</label><select id="interest" name="interest"><option>Messaging API</option><option>Voice API</option><option>Video API</option><option>Verify API</option><option>All CPaaS solutions</option></select>
+   <button class="btn" type="submit">Request a demo</button><div class="notice" id="formNotice" aria-live="polite">Demo form preview — no backend connected.</div>
+  </form>
+ </div>
+</section>
+</main>
+<footer><div class="foot"><div><strong>CloudConnect</strong> · Communications made simple</div><div>© 2026 CloudConnect. Demo website for testing purposes.</div></div></footer>
+<script>
+document.getElementById('demoForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ document.getElementById('formNotice').textContent=`Thanks${name ? ', '+name : ''}! The demo form is working. No data was sent.`;
+});
+</script>
+</body>
+</html>
